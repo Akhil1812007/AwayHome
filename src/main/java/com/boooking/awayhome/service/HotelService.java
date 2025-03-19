@@ -58,6 +58,7 @@ public class HotelService implements IHotelService{
                     return new ResourceNotFoundException("Failed to get hotel with id {}"+id);
                 });
         hotel.setIsActive(false);
+        //delete  all future inventories of the hotel
 
     }
 
@@ -69,6 +70,7 @@ public class HotelService implements IHotelService{
                     return new ResourceNotFoundException("Failed to get hotel with id {}"+id);
                 });
         hotel.setIsActive(true);
+        //Activate all the rooms in the hotel
 
     }
 
