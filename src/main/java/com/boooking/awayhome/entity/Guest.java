@@ -28,7 +28,7 @@ public class Guest {
     private  Integer age;
 
     @ManyToMany(mappedBy = "guests")
-    private Set<Boooking> bookings;
+    private Set<Booking> bookings;
 
 
 

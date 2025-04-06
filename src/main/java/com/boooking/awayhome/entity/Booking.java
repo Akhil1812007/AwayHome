@@ -2,9 +2,9 @@ package com.boooking.awayhome.entity;
 
 import com.boooking.awayhome.entity.enums.BookingStatus;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -12,7 +12,10 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-public class Boooking {
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,12 +53,8 @@ public class Boooking {
 
 
     @Column(nullable = false)
-    private LocalDate CheckOutDate;
+    private LocalDate checkOutDate;
 
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn (name ="payment_id" )
-    private Payment payment;
 
     @ManyToMany()
     @JoinTable(
@@ -65,6 +64,8 @@ public class Boooking {
             inverseJoinColumns = @JoinColumn(name="guest_id")
     )
     private Set<Guest> guests;
+    @Column(nullable = false ,precision = 5,scale = 2)
+    private BigDecimal amount;
 
 
 

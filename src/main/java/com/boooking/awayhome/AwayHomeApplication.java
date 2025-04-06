@@ -9,7 +9,7 @@ public class AwayHomeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AwayHomeApplication.class, args);
-		System.out.println("jkfmhklmfdlkmlkfdm");
+		System.out.println("Server started");
 
 	}
 

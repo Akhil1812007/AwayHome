@@ -22,6 +22,14 @@ public class GlobalExceptionHandler {
 
     }
 
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<ApiResponse<?>> handleAlException (Exception exception){
+//        ApiError apiError=ApiError.builder()
+//                ._status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                .message(exception.getMessage())
+//                .build();
+//        return builderErrorResponsibleEntity(apiError);
+//    }
     private ResponseEntity<ApiResponse<?>> builderErrorResponsibleEntity(ApiError apiError) {
         return new ResponseEntity<>(new ApiResponse<>(apiError),apiError.get_status());
 

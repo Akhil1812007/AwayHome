@@ -1,7 +1,7 @@
 package com.boooking.awayhome.service;
 
 import com.boooking.awayhome.dto.HotelDto;
-import com.boooking.awayhome.entity.Hotel;
+import com.boooking.awayhome.dto.HotelInfoDto;
 
 public interface IHotelService {
     HotelDto createHotel (HotelDto hotelDto);
@@ -11,4 +11,6 @@ public interface IHotelService {
     void DeleteHotel(Long id);
 
     void ActivateHotel(Long id);
+
+    HotelInfoDto getHotelInformation(Long hotelId);
 }
